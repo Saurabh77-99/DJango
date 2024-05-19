@@ -1,0 +1,36 @@
+Django is web framework
+------------------------
+uv package 
+
+.venv\Scripts\activate
+deactivate
+
+uv pip install Django
+
+django-admin startproject Project-name
+
+cd Project-name
+
+python manage.py runserver port-number
+- we get db.sqlite3 file
+
+manage.py - starting point file and gets invoke first
+db.sqlite - its default database used in django
+multiple modules therefore pycache folder is built.
+
+settings.py -- configuration of Django
+Middlewares , auth , templates
+
+urls.py - routing files
+admin is by default.
+
+views.py - business logic
+
+------------------------------------------------------------
+Django architecture
+
+User --req--> web --req--> Django --url resolver --req--> urls.py --req--> views.py -->Model.py --> database      ^                                                 |
+                              |                                                 |
+                              |______________________________________________response
+
+
