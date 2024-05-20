@@ -7,3 +7,13 @@ h1{
     text-align: center;
     font-size: 2em;
 }
+
+#box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 50vw;
+    background-color: rgb(156, 131, 156);
+    color: purple;
+}
