@@ -34,3 +34,4 @@ User --req--> web --req--> Django --url resolver --req--> urls.py --req--> views
                               |______________________________________________response
 
 
+Templating engine
