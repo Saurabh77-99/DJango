@@ -50,11 +50,11 @@ admin is by default.
 views.py - business logic
 ------------------------------------------------------------
 ### Django architecture
-
+```
 User --> req--> web -->req--> Django --> url resolver --? req--> urls.py --req--> views.py -->Model.py --> database       ^                                                    |
                                |                                                    |
                                |_________________________________________________response
-
+```
 views.py in(Jango/Jango) -> logic and response
 
 Basic Code in views.py for request , response 
