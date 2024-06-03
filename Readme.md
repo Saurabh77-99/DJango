@@ -1,9 +1,9 @@
 Django is web framework
 ------------------------
 ### uv installation :-
-uv package
+    uv package
 
-pip install uv
+    pip install uv
 
 #### for creating virtual environment:-
 uv venv
