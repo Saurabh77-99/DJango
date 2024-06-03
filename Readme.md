@@ -130,8 +130,127 @@ settings.py(modified for rendering css):-
     STATIC_URL = "static/"
     STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]    
 
-Now you can finally inject css in it
+Now you can finally inject css in it.
 
+### Install Django from vscode extension
+
+### creating other apps 
+Virtual environment must be on,inside the directory where manage.py exist only then apps can be created.
+
+    python manage.py startapp app
+
+This will create a folder named 'app' having migrations and files etc.
+
+When we create an app , it doesn't contain settings.py file.
+
+Go to settings.py of the first one you created , it has some cooked in files.
+
+    INSTALLED_APPS = [
+        "django.contrib.admin",
+        "django.contrib.auth",
+        "django.contrib.contenttypes",
+        "django.contrib.sessions",
+        "django.contrib.messages",
+        "django.contrib.staticfiles",
+        'app'
+    ]
+
+After adding this app has been configured.
+
+Create a templates folder inside new 'app' you created
+
+inside templates again you create a folder named 'app'
+
+    app/templates/app
+
+Create a new file and name it anything, i have "app.html"
+
+After that for EMMET suggestions ,
+ 
+    press ctrl + , 
+    Search for "emmet"
+    You will find Include Languages section
+    Add Item-Value : django-html and html , press Ok
+
+### Jinja templating
+
+After that go to your app.html type any simple html code
+
+create function to render inside views.py
+
+Where to render, you will need url but there is no url file in your app directory.
+
+Therefore go to your main project Jango where you have urls.py 
+
+Copy code from urls.py(Jango), create urls.py(app) and paste
+
+    from django.contrib import admin
+    from django.urls import path
+    from . import views
+
+    urlpatterns = [
+        path("admin/", admin.site.urls),
+        path('',views.home,name='home'),
+        path('about/',views.about,name='about'),
+        path('contact/',views.contact,name='contact'),
+    ]
+
+### Connect URLS.PY(main) to urls.py(apps)
+
+include below code in main urls.py, we are transferring controls :-
+
+    urlpatterns = [
+        path("admin/", admin.site.urls),
+        path('',views.home,name='home'),
+        path('about/',views.about,name='about'),
+        path('contact/',views.contact,name='contact'),
+        path('app/',include('app.urls'))
+    ]
+
+Then include this code according to yours in your newly created app in urls.py: 
+
+    urlpatterns = [
+    path('',views.app,name='app'),
+    ]
+
+Now you can run:
+
+    python manage.py runserver
+
+/app add on url , it works
+
+
+## Creating templates:
+
+Go on Jango/templates/layout.html
+
+    <title>
+        {% block title %}
+        Default value
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        <nav>This is nav bar</nav>
+        {% block content %}{% endblock %}
+    </body>
+
+Go to index.html of main project, clear it and add below code:
+
+    {% extends "layout.html" %}
+
+    {% block title %}
+    Home Page
+    {% endblock %}
+
+    {% block content %}
+    <h1>Django from template block_unnamed</h1>
+    {% endblock %}
+
+This can be used anywhere try replacing it in app.html too!
+
+-------------------------------------
 
     uv pip install django-tailwind
     uv pip install 'django-tailwind[reload]'

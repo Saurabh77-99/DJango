@@ -37,8 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'chai',
-    'theme',
+    'app'
 ]
 
 # TAILWIND_APP_NAME = 'theme'
