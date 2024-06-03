@@ -1,29 +1,34 @@
 Django is web framework
 ------------------------
 ### uv installation :-
-uv package 
+uv package
 
 pip install uv
 
-for creating virtual environment:-
+#### for creating virtual environment:-
 uv venv
 
 for activation   :- .venv\Scripts\activate
 for deactivation :- deactivate
 
-# Installing Django:
+### Installing Django:
 uv pip install Django
 
+### Creating Project:
 django-admin startproject Project-name
 
 cd Project-name
 
+### To run project:-
 python manage.py runserver port-number
+
 - we get db.sqlite3 file
 
 manage.py - starting point file and gets invoke first
+
 db.sqlite - its default database used in django
-multiple modules therefore pycache folder is built.
+
+multiple modules therefore [pycache] folder is built.
 
 settings.py -- configuration of Django
 Middlewares , auth , templates
