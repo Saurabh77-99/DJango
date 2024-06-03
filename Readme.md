@@ -1,15 +1,16 @@
 Django is web framework
 ------------------------
 ### uv installation :-
-    uv package
+uv package
 
     pip install uv
 
 #### for creating virtual environment:-
-uv venv
+    uv venv
 
-for activation   :- .venv\Scripts\activate
-for deactivation :- deactivate
+for activation:-
+``` .venv\Scripts\activate ```
+for deactivation :- ``` deactivate```
 
 ### Installing Django:-
 uv pip install Django
