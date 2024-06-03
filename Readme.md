@@ -7,7 +7,7 @@ uv venv
 for activation   :- .venv\Scripts\activate
 for deactivation :- deactivate
 
-#Installing Django:
+# Installing Django:
 uv pip install Django
 
 django-admin startproject Project-name
