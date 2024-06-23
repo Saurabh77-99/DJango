@@ -250,18 +250,4 @@ Go to index.html of main project, clear it and add below code:
 
 This can be used anywhere try replacing it in app.html too!
 
--------------------------------------
-
-    uv pip install django-tailwind
-    uv pip install 'django-tailwind[reload]'
-
-if it gives error then 
-
-    python -m ensurepip --upgrade
-    python -m pip install --upgrade pip
-    pip install 'django-tailwind[reload]'
-    python manage.py tailwind init 
-
-after running this command in app directory, you will get theme folder formed in pwd.
-
 
